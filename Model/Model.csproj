@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B28760D1-BE53-4610-B335-602117962526}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Model</RootNamespace>
+    <AssemblyName>Model</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Sap.Data.Hana.v4.5">
+      <HintPath>..\..\v4.5\Sap.Data.Hana.v4.5.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\AdjuntosGeneration.cs" />
+    <Compile Include="Data\AnticiposGeneration.cs" />
+    <Compile Include="Data\DatosExtraGeneration.cs" />
+    <Compile Include="Data\DescuentosGeneration.cs" />
+    <Compile Include="Data\GeneralDataGeneration.cs" />
+    <Compile Include="Interfaces\IAdjuntosGeneration.cs" />
+    <Compile Include="Interfaces\IDatosExtraGeneration.cs" />
+    <Compile Include="Interfaces\IGeneralDataGeneration.cs" />
+    <Compile Include="Interfaces\IAnticiposGeneration.cs" />
+    <Compile Include="Interfaces\IDescuentosGeneration.cs" />
+    <Compile Include="Interfaces\IImpuestosGeneration.cs" />
+    <Compile Include="Interfaces\IItemsGeneration.cs" />
+    <Compile Include="Data\ImpuestosGeneration.cs" />
+    <Compile Include="Data\ItemsGeneration.cs" />
+    <Compile Include="Interfaces\IDbQuery.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Data\DbQuery.cs" />
+    <Compile Include="SoapResponse.cs" />
+    <Compile Include="XmlModel\XmlAdjuntos.cs" />
+    <Compile Include="XmlModel\XmlAdquiriente.cs" />
+    <Compile Include="XmlModel\XmlAnticipos.cs" />
+    <Compile Include="XmlModel\XmlCargos.cs" />
+    <Compile Include="XmlModel\XmlConstanciaRecibido.cs" />
+    <Compile Include="XmlModel\XmlCorreosCopia.cs" />
+    <Compile Include="XmlModel\MainXmlModel.cs" />
+    <Compile Include="XmlModel\XmlDatosExtra.cs" />
+    <Compile Include="XmlModel\XmlDatosExtraItem.cs" />
+    <Compile Include="XmlModel\Xmldocumento.cs" />
+    <Compile Include="XmlModel\XmlEntrega.cs" />
+    <Compile Include="XmlModel\XmlFacturador.cs" />
+    <Compile Include="XmlModel\XmlFormasPago.cs" />
+    <Compile Include="XmlModel\XmlImpuestos.cs" />
+    <Compile Include="XmlModel\XmlItems.cs" />
+    <Compile Include="XmlModel\XmlOrdenDeCompra.cs" />
+    <Compile Include="XmlModel\XmlOrdenDeDespacho.cs" />
+    <Compile Include="XmlModel\XmlOtroAutorizado.cs" />
+    <Compile Include="XmlModel\XmlPeriodoFacturacion.cs" />
+    <Compile Include="XmlModel\XmlReferencias.cs" />
+    <Compile Include="XmlModel\XmlTasasDeCambio.cs" />
+    <Compile Include="XmlModel\XmlTotales.cs" />
+    <Compile Include="XmlModel\XmlTransportador.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Log\Log.csproj">
+      <Project>{3517E9E7-6DAD-473B-8110-BD7BB013C0AC}</Project>
+      <Name>Log</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
